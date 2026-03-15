@@ -1,1 +1,154 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil — BudgetBuddy</title>
+  <link rel="stylesheet" href="../assests/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><a href="/index.html" style="display:flex;align-items:center;gap:.55rem"><span class="brand-icon">₺</span> BudgetBuddy</a></div>
+  <ul class="nav-links">
+    <li><a href="/index.html">Panel</a></li>
+    <li><a href="project.html">İşlemler</a></li>
+    <li><a href="about.html">Profil</a></li>
+    <li><a href="contact.html">Destek</a></li>
+    <li><a href="#" id="btn-cikis" class="nav-cta">Çıkış</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <h1 class="page-title">Profilim</h1>
+  <p class="page-sub">Hesap bilgilerini ve finansal özetini görüntüle.</p>
+
+  <!-- Profil Başlık -->
+  <div class="profile-header">
+    <div class="profile-avatar">👤</div>
+    <div class="profile-info">
+      <h2 id="profil-ad">Yükleniyor…</h2>
+      <p id="profil-email">—</p>
+      <div class="profile-badge">
+        <span class="badge badge-g">✓ Aktif Üye</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Finansal Özet -->
+  <div class="grid-4" style="margin-bottom:2rem">
+    <div class="stat-card">
+      <span class="sc-lbl">Toplam İşlem</span>
+      <span class="sc-val p" id="profil-islem">—</span>
+    </div>
+    <div class="stat-card">
+      <span class="sc-lbl">Net Bakiye</span>
+      <span class="sc-val" id="profil-bakiye">—</span>
+    </div>
+    <div class="stat-card">
+      <span class="sc-lbl">Toplam Gelir</span>
+      <span class="sc-val g" id="profil-gelir">—</span>
+    </div>
+    <div class="stat-card">
+      <span class="sc-lbl">Toplam Gider</span>
+      <span class="sc-val r" id="profil-gider">—</span>
+    </div>
+  </div>
+
+  <div class="grid-2">
+
+    <!-- Hesap Bilgileri -->
+    <div class="card">
+      <div class="card-title">👤 Hesap Bilgileri</div>
+      <div class="form-group">
+        <label>Ad Soyad</label>
+        <input type="text" id="inp-ad" placeholder="Ad Soyad" readonly
+          style="opacity:.6;cursor:default"/>
+      </div>
+      <div class="form-group">
+        <label>E-posta</label>
+        <input type="email" id="inp-email" placeholder="E-posta" readonly
+          style="opacity:.6;cursor:default"/>
+      </div>
+      <div class="form-group">
+        <label>Para Birimi</label>
+        <select id="inp-para">
+          <option value="TRY" selected>₺ Türk Lirası (TRY)</option>
+          <option value="USD">$ Amerikan Doları (USD)</option>
+          <option value="EUR">€ Euro (EUR)</option>
+        </select>
+      </div>
+      <button class="btn btn-success" onclick="toast('Bu özellik yakında aktif olacak.','basari')">Kaydet</button>
+    </div>
+
+    <!-- Şifre Değiştir -->
+    <div class="card">
+      <div class="card-title">🔒 Şifre Değiştir</div>
+      <form id="form-sifre">
+        <div class="form-group">
+          <label>Mevcut Şifre</label>
+          <input type="password" name="eski" placeholder="••••••••" required/>
+        </div>
+        <div class="form-group">
+          <label>Yeni Şifre</label>
+          <input type="password" name="yeni" placeholder="En az 8 karakter" minlength="8" required/>
+        </div>
+        <div class="form-group">
+          <label>Yeni Şifre Tekrar</label>
+          <input type="password" name="yeni2" placeholder="Tekrar gir" required/>
+        </div>
+        <button type="submit" class="btn btn-success btn-full">Şifreyi Güncelle</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Uygulama Hakkında -->
+  <div class="card" style="margin-top:1.4rem">
+    <div class="card-title">ℹ️ BudgetBuddy Hakkında</div>
+    <div class="grid-3">
+      <div>
+        <p style="font-size:.8rem;color:var(--text2);font-family:var(--mono);margin-bottom:.3rem">VERSİYON</p>
+        <p style="font-weight:700">v1.0.0</p>
+      </div>
+      <div>
+        <p style="font-size:.8rem;color:var(--text2);font-family:var(--mono);margin-bottom:.3rem">GELİŞTİRİCİ</p>
+        <p style="font-weight:700">BudgetBuddy Team</p>
+      </div>
+      <div>
+        <p style="font-size:.8rem;color:var(--text2);font-family:var(--mono);margin-bottom:.3rem">LİSANS</p>
+        <p style="font-weight:700">MIT</p>
+      </div>
+    </div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:1.4rem 0"/>
+    <p style="color:var(--text2);font-family:var(--mono);font-size:.85rem;line-height:1.7">
+      BudgetBuddy, kullanıcıların gelir ve giderlerini kolayca takip etmelerini, harcama alışkanlıklarını analiz etmelerini sağlayan açık kaynaklı bir kişisel finans yönetimi uygulamasıdır. PostgreSQL tabanlı güçlü bir backend ve sade bir arayüz ile finansal özgürlüğe giden yolda yanınızdayız.
+    </p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-brand"><span class="brand-icon">₺</span> BudgetBuddy</div>
+  <p>© 2026 BudgetBuddy</p>
+</footer>
+
+<script src="../assests/js/main.js"></script>
+<script>
+  // Profil alanlarını doldur
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const { kullanici } = await API.get('/auth/ben');
+      document.getElementById('inp-ad').value    = `${kullanici.ad} ${kullanici.soyad}`;
+      document.getElementById('inp-email').value = kullanici.email;
+      document.getElementById('profil-ad').textContent    = `${kullanici.ad} ${kullanici.soyad}`;
+      document.getElementById('profil-email').textContent = kullanici.email;
+    } catch(_) {}
+  });
+</script>
+</body>
+</html>
+
