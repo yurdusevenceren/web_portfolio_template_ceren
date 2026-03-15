@@ -1,1 +1,81 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BudgetBuddy — Panel</title>
+  <link rel="stylesheet" href="assests/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><span class="brand-icon">₺</span> BudgetBuddy</div>
+  <ul class="nav-links">
+    <li><a href="/index.html">Panel</a></li>
+    <li><a href="pages/project.html">İşlemler</a></li>
+    <li><a href="pages/about.html">Profil</a></li>
+    <li><a href="pages/contact.html">Destek</a></li>
+    <li><a href="#" id="btn-cikis" class="nav-cta">Çıkış</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">💰 Kişisel Finans</p>
+    <h1 class="hero-title">Paranı <em>Akıllıca</em><br/>Yönet.</h1>
+    <p class="hero-desc">Gelir ve giderlerini tek ekranda takip et. Harcama alışkanlıklarını analiz et, geleceğini planla.</p>
+    <div class="hero-btns">
+      <a href="pages/project.html" class="btn-primary">İşlemlere Git →</a>
+      <a href="pages/about.html"   class="btn-ghost">Profilim</a>
+    </div>
+  </div>
+  <div class="hero-card-wrap">
+    <div class="balance-card">
+      <span class="balance-label">Net Bakiye</span>
+      <span class="balance-amount" id="bakiye-tutar">₺0,00</span>
+      <div class="balance-row">
+        <div class="bstat g"><span>↑ Bu Ay Gelir</span><strong id="gelir-tutar">₺0,00</strong></div>
+        <div class="bstat r"><span>↓ Bu Ay Gider</span><strong id="gider-tutar">₺0,00</strong></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ÖZELLİKLER -->
+<section class="section">
+  <div class="sec-head">
+    <h2>Neler Yapabilirsin?</h2>
+    <p>Finansal hedeflerine ulaşmak için ihtiyacın olan her şey.</p>
+  </div>
+  <div class="grid-4">
+    <div class="feat-card"><div class="feat-icon">📊</div><h3>Görsel Raporlar</h3><p>Harcamalarını anlık grafiklerle analiz et.</p></div>
+    <div class="feat-card"><div class="feat-icon">🏷️</div><h3>Kategori</h3><p>Gıda, Kira, Eğlence... otomatik sınıflandır.</p></div>
+    <div class="feat-card"><div class="feat-icon">🔔</div><h3>Bütçe Alarmı</h3><p>Limite yaklaştığında uyarı al, aşımı önle.</p></div>
+    <div class="feat-card"><div class="feat-icon">📅</div><h3>Aylık Özet</h3><p>Her ay sonunda detaylı finansal özet raporu.</p></div>
+  </div>
+</section>
+
+<!-- SON İŞLEMLER -->
+<section class="section" style="padding-top:0">
+  <div class="sec-head-row">
+    <h2>Son İşlemler</h2>
+    <a href="pages/project.html" class="link-more">Tümünü Gör →</a>
+  </div>
+  <div class="tx-list" id="son-islemler">
+    <p style="padding:1.5rem;color:var(--text2);font-family:var(--mono);font-size:.85rem">Yükleniyor…</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-brand"><span class="brand-icon">₺</span> BudgetBuddy</div>
+  <p>© 2026 BudgetBuddy — Kişisel Finans Yönetimi</p>
+</footer>
+
+<script src="assests/js/main.js"></script>
+</body>
+</html>
+
